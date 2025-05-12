@@ -16,7 +16,7 @@ const App = () => {
 
   const handleCountryChange = (e) => {
     setSelectedCountryCode(e.target.value);
-    setGeoJsonKey((prevKey) => prevKey + 1); // 再レンダリング
+    setGeoJsonKey((prevKey) => prevKey + 1);
   };
 
   const getCountryStyle = (feature) => ({
