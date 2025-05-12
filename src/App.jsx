@@ -11,7 +11,7 @@ const App = () => {
     fetch('/world-administrative-boundaries.geojson')
       .then((response) => response.json())
       .then((data) => setWorldData(data))
-      .catch((error) => console.error('GeoJSONの読み込みエラー:', error));
+      .catch((error) => console.error('Failed to Load:', error));
   }, []);
 
   const handleCountryChange = (e) => {
