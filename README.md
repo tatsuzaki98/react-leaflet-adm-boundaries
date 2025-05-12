@@ -2,6 +2,13 @@
 This project is a sample application built with React 19 and React-Leaflet.
 It displays a world map, and when you select a country from a dropdown list, that country is highlighted in red on the map.
 
+## Data Source
+The administrative boundaries dataset was downloaded from the following site:
+It is open data, free for commercial use and redistribution.
+
+World Administrative Boundaries - Opendatasoft
+https://public.opendatasoft.com/explore/dataset/world-administrative-boundaries/map/?location=6,1.25234,32.4646&basemap=jawg.light
+
 ## File structure and roles
 `public/world-administrative-boundaries.geojson`
 Contains global administrative boundaries data.
@@ -23,7 +30,7 @@ Example:
       },
       "geometry": {
         "type": "Polygon",
-        "coordinates": [...]
+        "coordinates": []
       }
     }
   ]
