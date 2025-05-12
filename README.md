@@ -1,3 +1,51 @@
+# Country Highlight with React and Leaflet
+This project is a sample application built with React 19 and React-Leaflet.
+It displays a world map, and when you select a country from a dropdown list, that country is highlighted in red on the map.
+
+## File structure and roles
+`public/world-administrative-boundaries.geojson`
+Contains global administrative boundaries data.
+
+GeoJSON format with properties such as iso3, name, continent per country.
+
+Example:
+
+```json
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "iso3": "UGA",
+        "name": "Uganda",
+        "continent": "Africa"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [...]
+      }
+    }
+  ]
+}
+```
+
+### src/App.tsx
+Loads GeoJSON data via fetch('/world-administrative-boundaries.geojson').
+
+When a country (iso3 code) is selected in the dropdown, the GeoJSON layer re-renders.
+
+Map is composed of MapContainer, TileLayer, and GeoJSON components.
+
+Country polygons are styled by the style function, which highlights the selected country (fillColor: 'red').
+
+### Handling GeoJSON
+Pass FeatureCollection data to <GeoJSON data={...} /> from react-leaflet.
+
+Use the style function to freely set fill color, stroke width, etc., per country polygon.
+
+Placing the file in public/ allows direct reference during Vite builds. 
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
